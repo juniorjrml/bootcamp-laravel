@@ -29,6 +29,7 @@ Route::resource('chirps', ChirpController::class)
         'store',
         'edit',
         'update',
+        'destroy'
     ]
 )
 ->middleware(
