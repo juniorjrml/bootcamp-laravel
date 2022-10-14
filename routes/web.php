@@ -26,7 +26,9 @@ Route::resource('chirps', ChirpController::class)
 ->only(
     [
         'index',
-        'store'
+        'store',
+        'edit',
+        'update',
     ]
 )
 ->middleware(
