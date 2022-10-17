@@ -12,6 +12,7 @@
         </form>
     </div>
     <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
+        {{$chirps->links()}}
         @foreach ($chirps as $chirp)
             <div class="p-6 flex space-x-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 -scale-x-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -54,6 +55,7 @@
                 </div>
             </div>
         @endforeach
+        {{$chirps->links()}}
     </div>
     {{-- <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
         @foreach ($chirps as $chirp)
