@@ -11,5 +11,6 @@ Cada usuário pode:
 
 * Adicionado Extra:
     - adicionado paginação
+    - filtro e pesquisa
 
 

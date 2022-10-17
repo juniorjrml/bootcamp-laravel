@@ -12,17 +12,24 @@ class ChirpController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $payload = $request->validate(["search"=>"string"]);
+        if(isset($payload["search"])){
+            $search = $payload["search"];
+        }
+        else{
+            $search = null;
+        }
         return view('chirps.index', [
-            'chirps' => Chirp::with('user')->latest()->paginate(3),
+            'chirps' =>
+                Chirp::with('user')
+                ->where('message', 'LIKE', '%'.$search.'%')
+                ->latest()
+                ->paginate(5)
+                ->withQueryString(),
+            'search'=>$search,
         ]);
-        return view(
-            'chirps.index',
-            [
-                'chirps'=>Chirp::all()
-            ]
-        );
     }
 
     /**

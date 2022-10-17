@@ -11,6 +11,13 @@
             <x-primary-button class="mt-4">{{ __('Chirp') }}</x-primary-button>
         </form>
     </div>
+
+
+
+            @include('chirps.filter')
+
+
+
     <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
         {{$chirps->links()}}
         @foreach ($chirps as $chirp)
