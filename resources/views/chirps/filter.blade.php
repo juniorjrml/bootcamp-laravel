@@ -1,5 +1,5 @@
 <form action="{{ route('chirps.index') }}" method="get">
-<div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+<div class="hidden p-2 sm:flex-1 sm:flex sm:items-center sm:justify-between">
     <div>
         @if (isset($search))
             <span class="bg-gray-200 px-2 py-2 rounded">
@@ -32,6 +32,4 @@
         </button>
     </div>
 </div>
-
-
-</form>
+</form><Br>

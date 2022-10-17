@@ -1,4 +1,5 @@
 <x-app-layout>
+    <div class="p-6 m-6 mt-6 bg-white shadow-sm rounded-lg">
     <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
         <form method="POST" action="{{ route('chirps.store') }}">
             @csrf
@@ -11,12 +12,7 @@
             <x-primary-button class="mt-4">{{ __('Chirp') }}</x-primary-button>
         </form>
     </div>
-
-
-
-            @include('chirps.filter')
-
-
+    @include('chirps.filter')
 
     <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
         {{$chirps->links()}}
@@ -64,13 +60,5 @@
         @endforeach
         {{$chirps->links()}}
     </div>
-    {{-- <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
-        @foreach ($chirps as $chirp)
-            <span>
-                <p>
-                    {{$chirp->message}}
-                </p>
-            </span>
-        @endforeach
-    </div> --}}
+    </div>
 </x-app-layout>
